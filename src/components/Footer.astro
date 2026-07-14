@@ -1,0 +1,19 @@
+---
+import SocialLinks from './SocialLinks.astro';
+
+const meetUrl =
+  'https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUZJRWtmRlBidDdUfGRlZmF1bHR8OTRhYWFkNThkYzRkYTk5ZTdjMzc0YTMzOGI5ZDFiZTA';
+---
+
+<footer class="site-footer theme-black section">
+  <div class="section__inner">
+    <h3>Jinit Shah</h3>
+    <p class="footer-links">
+      <a href="https://drive.google.com/file/d/1BS70R4VylUdfkhxd-xffKLvQw9iDJyZr/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      <a href={meetUrl} target="_blank" rel="noopener">Meet!</a>
+      <a href="https://www.linkedin.com/in/hellojinit" target="_blank" rel="noopener">Connect</a>
+    </p>
+    <p><a href="mailto:hi@jinit.dev">hi@jinit.dev</a></p>
+    <SocialLinks size={20} />
+  </div>
+</footer>
