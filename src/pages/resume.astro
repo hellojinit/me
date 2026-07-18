@@ -9,15 +9,22 @@ import Base from '../layouts/Base.astro';
   headerOn="dark"
 >
   <section class="section theme-black-bold resume-hero centered">
-    <div class="section__inner">
+    <div class="section__inner" data-reveal-group>
       <h1>Resume</h1>
-      <p><a href="/s/Resume_JinitShah.pdf">pdf</a></p>
+      <p><a href="/s/Resume_JinitShah.pdf" data-astro-reload data-astro-prefetch="false">Get PDF</a></p>
     </div>
   </section>
 
-  <section class="section theme-light-bold">
+  <section class="section theme-black-bold">
     <div class="section__inner">
-      <a class="resume-frame" href="/s/Resume_JinitShah.pdf" aria-label="Open resume PDF">
+      <a
+        class="resume-frame"
+        href="/s/Resume_JinitShah.pdf"
+        data-reveal
+        data-astro-reload
+        data-astro-prefetch="false"
+        aria-label="Open resume PDF"
+      >
         <img src="/img/resume.jpg" width="1313" height="1700" alt="Resume of Jinit Shah" />
       </a>
     </div>

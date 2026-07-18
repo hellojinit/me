@@ -8,7 +8,7 @@ import Base from '../layouts/Base.astro';
   current="/"
   headerOn="dark"
 >
-  <section class="section theme-black-bold">
+  <section class="section theme-black-bold" data-hero>
     <div class="section__inner split">
       <figure class="hero-photo">
         <img
@@ -20,7 +20,7 @@ import Base from '../layouts/Base.astro';
         />
       </figure>
       <div class="hero-text">
-        <h4>Hey,</h4>
+        <h4 class="hero-hey">Hey, <span class="hey-rule" aria-hidden="true"></span></h4>
         <h2>
           I’m a <strong><em>senior software developer</em></strong> and a
           <strong><em>mathematician</em></strong>, deeply passionate and curious about finding
@@ -33,7 +33,7 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="section theme-black">
-    <div class="section__inner awards">
+    <div class="section__inner awards" data-reveal-group>
       <div class="award">
         <img src="/img/duck.png" width="360" height="360" alt="" loading="lazy" />
         <p>
@@ -52,7 +52,7 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="section theme-light-bold">
-    <div class="section__inner split">
+    <div class="section__inner split" data-reveal-group>
       <div class="feature-meta">
         <h1 class="handsway-title">
           <a href="https://apps.apple.com/us/app/handsway/id1641972653" target="_blank" rel="noopener">Handsway</a>
@@ -67,7 +67,7 @@ import Base from '../layouts/Base.astro';
           camera in real time. Handsway has received <strong>$4K+ in funding</strong> and helped
           <strong>2k+ users</strong>.
         </p>
-        <div class="dream-build">
+        <div class="dream-build" data-reveal-group>
           <div>
             <h4>Dream it.</h4>
             <p>
