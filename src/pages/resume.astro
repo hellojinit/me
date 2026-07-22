@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Base
@@ -13,9 +14,6 @@ import Base from '../layouts/Base.astro';
       <h1>Resume</h1>
       <p><a href="/s/Resume_JinitShah.pdf" data-astro-reload data-astro-prefetch="false">Get PDF</a></p>
     </div>
-  </section>
-
-  <section class="section theme-black-bold">
     <div class="section__inner">
       <a
         class="resume-frame"
@@ -29,4 +27,6 @@ import Base from '../layouts/Base.astro';
       </a>
     </div>
   </section>
+
+  <Contact />
 </Base>

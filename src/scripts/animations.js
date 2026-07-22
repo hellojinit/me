@@ -43,7 +43,12 @@ function scrollReveals() {
     inView(
       '[data-reveal]',
       (el) => {
-        animate(el, { opacity: [0, 1], y: [24, 0] }, { duration: 0.7, ease: EASE });
+        // reveal only after any inner image has decoded — fading in a frame
+        // that is still downloading/painting reads as flicker (resume scan)
+        const img = el.querySelector('img');
+        const run = () => animate(el, { opacity: [0, 1], y: [24, 0] }, { duration: 0.7, ease: EASE });
+        if (img && !img.complete) img.decode().catch(() => {}).finally(run);
+        else run();
         // no return value -> Motion unobserves: each element reveals once
       },
       { margin: '0px 0px -12% 0px' }
@@ -51,11 +56,15 @@ function scrollReveals() {
     inView(
       '[data-reveal-group]',
       (group) => {
-        animate(
-          [...group.children],
-          { opacity: [0, 1], y: [24, 0] },
-          { duration: 0.65, delay: stagger(0.1), ease: EASE }
-        );
+        const run = () =>
+          animate(
+            [...group.children],
+            { opacity: [0, 1], y: [24, 0] },
+            { duration: 0.65, delay: stagger(0.1), ease: EASE }
+          );
+        const pending = [...group.querySelectorAll('img')].filter((img) => !img.complete);
+        if (pending.length) Promise.allSettled(pending.map((img) => img.decode())).then(run);
+        else run();
       },
       { margin: '0px 0px -10% 0px' }
     )

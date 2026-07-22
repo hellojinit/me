@@ -1,8 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import SocialLinks from '../components/SocialLinks.astro';
-
-const meetUrl = 'https://cal.com/jinit';
+import Contact from '../components/Contact.astro';
 ---
 
 <Base
@@ -196,19 +194,5 @@ const meetUrl = 'https://cal.com/jinit';
     </div>
   </section>
 
-  <section class="section theme-light contact">
-    <div class="section__inner" data-reveal-group>
-      <p><em>Contact</em></p>
-      <h3>
-        Have questions or wanna know more about me? I’m always open to connecting and talking about
-        practically anything*!
-      </h3>
-      <p>*Unless you want to listen to me rant for 2 hours, don’t ask me about ducks or bananas :)</p>
-      <div class="contact-row">
-        <SocialLinks size={24} />
-        <a href="mailto:hi@jinit.dev">hi@jinit.dev</a>
-        <a class="contact-meet" href={meetUrl} target="_blank" rel="noopener">Schedule Virtual Meeting</a>
-      </div>
-    </div>
-  </section>
+  <Contact />
 </Base>

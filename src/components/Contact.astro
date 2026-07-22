@@ -1,0 +1,21 @@
+---
+import SocialLinks from './SocialLinks.astro';
+
+const meetUrl = 'https://cal.com/jinit';
+---
+
+<section class="section theme-light contact">
+  <div class="section__inner" data-reveal-group>
+    <p><em>Contact</em></p>
+    <h3>
+      Have questions or wanna know more about me? I’m open to connecting and talking about
+      practically anything*!
+    </h3>
+    <p>*Unless you want an impromptu 2-hour TED talk, don’t ask me where to travel next, or about ducks :)</p>
+    <div class="contact-row">
+      <SocialLinks size={24} />
+      <a href="mailto:hi@jinit.dev">hi@jinit.dev</a>
+      <a class="contact-meet" href={meetUrl} target="_blank" rel="noopener">Schedule Virtual Meeting</a>
+    </div>
+  </div>
+</section>
